@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript" src="pagesFunctions.js"></script>  
+  <script src="js/jquery.min.js"></script>
+  <style>
+    body {
+      background-color: #eee;
+  	}
+    div.relativa {
+      position: relative;
+      width: 80%;
+      margin:0px auto;
+    }
+    .lado {
+      position:absolute;
+      top:0px;
+      left:0px;
+      overflow:hidden;
+      filter:brightness(150%);
+  	}
+    #encima {
+      top:80%;
+      left:10%;
+      z-index:1;
+      position:absolute;
+      width:93px;
+      height:62px;
+      animation-name: example;
+      animation-duration: 10s;		
+  	}
+  	@keyframes example {
+      0%   {opacity: 0}
+      25%  {opacity: 25%}
+      50%  {opacity: 50%}
+      75%  {opacity: 75%}
+      100% {opacity:100%}
+  	}
+    #mimenu {
+      position: absolute;
+      top:80px;
+      left:60px;  
+      line-height: 50px;
+      list-style-type: none;
+      z-index:99;
+    }
+    #mimenu li { 
+      position: relative;
+    }
+    #mimenu li a {
+      display: block;
+      text-decoration: none;
+      color: #908c8c;
+      font-family:"Arial", Sans-serif;
+      font-size: 18px;
+      font-weight:400;
+      font-weight: lighter;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: #555;
+    }
+    #mimenu li a.me:hover {
+      color: #eee;
+      margin-left:38px;
+  	}
+    a.me {
+      margin: 0px 0px -17px 0px;
+    }
+    a.me2 {
+      margin: -30px 0px 15px -40px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="relativa">
+    <img style="position:absolute; top:0px; left:0px;" width="37.5%" src="/media/images/imago_menu.jpg" alt="imagen"/>
+    <a href="#" onclick="send2Url('options','backButton')" target="_self">
+      <img src="../media/images/backButton.png" id="encima" alt="Imagen volver"/>
+    </a>
+    <video autoplay loop muted src="../media/videos/video_menu_R.mp4" width="100%"></video>
+    <ul id="mimenu">
+      <li>
+        <a class="me2" id="options" style="font-size:30px" ></a>
+      </li> 
+      <li>
+        <a class="me" href="#" onclick="send2Url('options','gameButton')" >GAME</a>
+      </li>	
+      <li>
+        <a class="me" href="#" >CONTROLS</a>
+      </li>	
+      <li>
+        <a class="me" href="#" >DISPLAY</a>
+      </li>	
+      <li>
+        <a class="me" href="#" onclick="send2Url('options','audioButton')"  >AUDIO</a>
+      </li>	
+      <li>
+        <a class="me" href="#" >LANGUAGE</a>	
+      </li>
+      <li>
+        <a class="me" href="#" >CREDITS</a> 
+      </li>
+    </ul>
+  </div>
+  <script type="text/javascript">urlInterpret();</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="pagesFunctions.js"></script>	
+	<style>
+		img{
+		position:absolute;
+		top: 0px;
+		left: 6px;
+		overflow: hidden;
+		filter: brightness(150%);
+		}
+		div.relativa{
+			position: relative;
+			width: 80%; margin: 0px auto;
+		}
+
+		#encima{
+			z-index: 1;
+			position: absolute;
+			top: 80%; 
+			left: 10%;
+			width: 200px; 
+			height: 54px;
+			animation-name: example;
+			animation-duration: 30s;
+		}
+		@keyframes example{
+			0% {opacity: 0}
+			25% {opacity: 25%}
+			50% {opacity: 50%}
+			75% {opacity: 75%}
+			100% {opacity: 100%}
+		}
+
+	</style>
+</head>
+<body>
+	<script type="text/javascript">urlInterpret();</script>
+	<div class="relativa">
+		<video autoplay loop muted src="../media/videos/video_menu_R.mp4" width="100%"></video>
+		<img class="lado" width="37.5%" src="../media/images/imago_menu.jpg" alt="imagen"/>
+		<a onclick="send2Url('start','startButton')">
+			<img name="menu" src="../media/images/startButton.png" id="encima" alt="boton empezar">
+		</a>
+	</div>
+</body>
+</html
