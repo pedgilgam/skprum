@@ -81,18 +81,18 @@
 					}
 				}
 				if(valida){
+					var cuerda; var traste;
+					dance:
+					for (cuerda=1;cuerda<7;cuerda++){
+						for(traste=1;traste<5;traste++){
+							var puls="p"+cuerda+traste;
+							if(document.getElementById(puls).getAttribute("src")==pulsado && notas[note].indexOf(puls)==-1){
+								note="";
+								break dance;
+							}
+						}
+					}
 					break;
-				}
-			}
-		}
-		var cuerda; var traste;
-		dance:
-		for (cuerda=1;cuerda<7;cuerda++){
-			for(traste=1;traste<5;traste++){
-				var puls="p"+cuerda+traste;
-				if(document.getElementById(puls).getAttribute("src")==pulsado && notas[note].indexOf(puls)==-1){
-					note="";
-					break dance;
 				}
 			}
 		}
