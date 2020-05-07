@@ -81,18 +81,29 @@
 					}
 				}
 				if(valida){
-					notasCompletasNow=notasCompletasNow+note;
+					break;
 				}
 			}
 		}
-		if(notasCompletasNow.length<=3 && notasCompletasNow.length>1){
+		var cuerda; var traste;
+		dance:
+		for (cuerda=1;cuerda<7;cuerda++){
+			for(traste=1;traste<5;traste++){
+				var puls="p"+cuerda+traste;
+				if(document.getElementById(puls).getAttribute("src")!=pulsado && notas[note].indexOf(puls)==-1){
+					note="";
+					break dance;
+				}
+			}
+		}
+		if(note!=""){
 			if (paramArray['eF']=="" || paramArray['eF']=="1"){
-				editarParam('eF',notasCompletasNow);
+				editarParam('eF',note);
 			}
 			else{
-				editarParam('eF',paramArray['eF']+"."+notasCompletasNow);
+				editarParam('eF',paramArray['eF']+"."+note);
 			}
-			alert("Has tocado la nota "+notasCompletasNow+"!")
+			alert("Has tocado la nota "+note+"!")
 			send2Url("feria","feria");
 		}
 	}
