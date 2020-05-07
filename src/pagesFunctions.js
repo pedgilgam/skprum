@@ -103,10 +103,8 @@ function Tips(){
 			alert(tip);
 			break;
 		case "game":
-			if (params['eO']!="1999" && params['eG']!="1.0.1.0.1.0.1.0.1.0.1.0"){
-				tip="01101001010101010010101001010101001 ¿¿??";
+			tip="01101001010101010010101001010101001 ¿¿??";
 			alert(tip);
-			}
 			break;
 		case "parchis":
 			if (params['eP']=="0"){
