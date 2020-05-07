@@ -331,6 +331,7 @@ function paramOptions (params){
 	document.getElementById("options").appendChild(text1);
 	if (params["eO"]=="1999"){
 		document.getElementById("options").setAttribute("onclick", "send2Url('options', 'parchis')");
+		document.getElementById("options").setAttribute("href", "#");
 	}
 	else{
 		document.getElementById("options").setAttribute("onclick", "");
