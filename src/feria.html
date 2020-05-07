@@ -66,7 +66,7 @@
 		var RE="p12.p21.p32"; var REm="p11.p23.p32";
 		notas["LA"]=LA;notas["LAm"]=LAm;notas["MI"]=MI;notas["MIm"]=MIm;notas["FA"]=FA;
 		notas["FAm"]=FAm;notas["SOL"]=SOL;notas["DO"]=DO;notas["RE"]=RE;notas["REm"]=REm;
-		var note;
+		var note; var notasCompletasNow = "";
 		var notasTocadas=paramArray['eF'].split(".");
 
 		for(note in notas){
@@ -81,17 +81,19 @@
 					}
 				}
 				if(valida){
-					if (paramArray['eF']=="" || paramArray['eF']=="1"){
-						editarParam('eF',note);
-					}
-					else{
-						editarParam('eF',paramArray['eF']+"."+note);
-					}
-					alert("Has tocado la nota "+note+"!")
-					send2Url("feria","feria");
-					break;
+					notasCompletasNow=notasCompletasNow+note;
 				}
 			}
+		}
+		if(notasCompletasNow.length<=3){
+			if (paramArray['eF']=="" || paramArray['eF']=="1"){
+				editarParam('eF',notasCompletasNow);
+			}
+			else{
+				editarParam('eF',paramArray['eF']+"."+notasCompletasNow);
+			}
+			alert("Has tocado la nota "+notasCompletasNow+"!")
+			send2Url("feria","feria");
 		}
 	}
 </script>
