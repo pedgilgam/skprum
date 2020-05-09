@@ -61,7 +61,7 @@
 		var notas={};
 		var LA="p22.p32.p42"; var LAm="p21.p32.p42";
 		var MI="p31.p42.p52"; var MIm="p42.p52";
-		var FA="p11.p21.p34.p43.p53.p63"; var FAm="p11.p21.p31.p43.p53.p63";
+		var FA="p11.p21.p32.p43.p53.p61"; var FAm="p11.p21.p31.p43.p53.p61";
 		var SOL="p52.p63"; var DO="p21.p42.p53";
 		var RE="p12.p21.p32"; var REm="p11.p23.p32";
 		notas["LA"]=LA;notas["LAm"]=LAm;notas["MI"]=MI;notas["MIm"]=MIm;notas["FA"]=FA;
@@ -87,8 +87,11 @@
 						for(traste=1;traste<5;traste++){
 							var puls="p"+cuerda+traste;
 							if(document.getElementById(puls).getAttribute("src")==pulsado && notas[note].indexOf(puls)==-1){
-								note="";
+								valida=false;
 								break dance;
+							}
+							else{
+								valida=true;
 							}
 						}
 					}
@@ -96,7 +99,7 @@
 				}
 			}
 		}
-		if(note!=""){
+		if(valida==true){
 			if (paramArray['eF']=="" || paramArray['eF']=="1"){
 				editarParam('eF',note);
 			}
